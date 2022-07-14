@@ -10,7 +10,7 @@ import java.util.List;
 public class AccountService {
     @Autowired
     AccountRepository accountRepository;
-    //get
+    //get account details
     public List<Account>getaccount(){
         return (List<Account>) accountRepository.findAll();
 
