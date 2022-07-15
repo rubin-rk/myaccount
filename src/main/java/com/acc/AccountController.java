@@ -1,11 +1,11 @@
-package controller;
+package com.acc;
 
-import entity.Account;
+import com.acc.entity.Account;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import service.AccountService;
+import com.acc.service.AccountService;
 
 import java.util.List;
 

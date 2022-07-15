@@ -1,7 +1,7 @@
-package service;
+package com.acc.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import respository.AccountTypeRep;
+import com.acc.respository.AccountTypeRep;
 
 public class AccountTypeService {
     @Autowired

@@ -1,7 +1,7 @@
-package service;
+package com.acc.service;
 
+import com.acc.respository.TransRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import respository.TransRepository;
 
 public class TransService {
     @Autowired

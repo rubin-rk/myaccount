@@ -1,13 +1,14 @@
-package controller;
+package com.acc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MyaccountApplication {
+public class MyAccountApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MyaccountApplication.class, args);
+
+		SpringApplication.run(MyAccountApplication.class, args);
 	}
 
 }

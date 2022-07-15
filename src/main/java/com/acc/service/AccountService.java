@@ -1,9 +1,9 @@
-package service;
+package com.acc.service;
 
-import entity.Account;
+import com.acc.entity.Account;
+import com.acc.respository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import respository.AccountRepository;
 
 import java.util.List;
 @Service
