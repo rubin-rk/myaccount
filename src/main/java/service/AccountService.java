@@ -13,7 +13,5 @@ public class AccountService {
     //get account details
     public List<Account>getaccount(){
         return (List<Account>) accountRepository.findAll();
-
-
     }
 }
