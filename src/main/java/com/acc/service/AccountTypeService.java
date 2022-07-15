@@ -12,7 +12,12 @@ import java.util.List;
 public class AccountTypeService {
     @Autowired
     AccountTypeRep accountTypeRep;
+    //find all list
     public List<AccountType> findAll(){
         return (List<AccountType>) accountTypeRep.findAll();
+    }
+    //create new row in table
+    public AccountType createNewTable(AccountType accountType){
+        return accountTypeRep.save(accountType);
     }
 }

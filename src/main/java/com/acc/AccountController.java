@@ -11,13 +11,13 @@ import java.util.List;
 public class AccountController {
     @Autowired
     private AccountService accountService;
-    //find all table
+    //get method ---find all table
     @RequestMapping (value="/account",method = RequestMethod.GET)
     public List<Account>getAccount(){
         return accountService.getAccount();
     }
 
-    //save
+    //post method --save new row
     @PostMapping(value = "/account/createNewTable")
     public Account createTable(@RequestBody Account account){
         return accountService.createTable(account);
