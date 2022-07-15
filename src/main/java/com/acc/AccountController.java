@@ -19,7 +19,7 @@ public class AccountController {
 
     //save
     @PostMapping(value = "/account/createNewTable")
-    public Account createTable(Account account){
+    public Account createTable(@RequestBody Account account){
         return accountService.createTable(account);
     }
     @GetMapping(value = "/hi")

@@ -12,7 +12,12 @@ import java.util.List;
 public class TransService {
     @Autowired
     TransRepository transRepository;
+    //find all table
     public List<Transaction>findAll(){
         return (List<Transaction>)transRepository.findAll();
+    }
+    //create new row for table
+    public Transaction createNewTable(Transaction transaction){
+        return transRepository.save(transaction);
     }
 }

@@ -16,5 +16,7 @@ public class AccountService {
     }
 
     //create new table
-    public 
+    public Account createTable(Account account){
+        return accountRepository.save(account);
+    }
 }
