@@ -12,7 +12,7 @@ public class Transaction {
     private int From_Account;
     private int To_Account;
     private String Description;
-    private  int trans_date;
+    private  String trans_date;
     private int Amount;
 
     public Transaction() {
@@ -50,11 +50,11 @@ public class Transaction {
         Description = description;
     }
 
-    public int getTrans_date() {
+    public String getTrans_date() {
         return trans_date;
     }
 
-    public void setTrans_date(int trans_date) {
+    public void setTrans_date(String trans_date) {
         this.trans_date = trans_date;
     }
 

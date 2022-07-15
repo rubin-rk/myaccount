@@ -2,10 +2,7 @@ package com.acc;
 
 import com.acc.entity.Account;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.acc.service.AccountService;
 
 import java.util.List;
@@ -14,9 +11,16 @@ import java.util.List;
 public class AccountController {
     @Autowired
     private AccountService accountService;
+    //find all table
     @RequestMapping (value="/account",method = RequestMethod.GET)
     public List<Account>getAccount(){
-        return accountService.getaccount();
+        return accountService.getAccount();
+    }
+
+    //save
+    @PostMapping(value = "/account/createNewTable")
+    public Account createTable(Account account){
+        return accountService.createTable(account);
     }
     @GetMapping(value = "/hi")
     public String hello(){
