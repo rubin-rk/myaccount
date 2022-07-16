@@ -20,4 +20,8 @@ public class AccountTypeService {
     public AccountType createNewTable(AccountType accountType){
         return accountTypeRep.save(accountType);
     }
+    //update row
+    public AccountType update(AccountType incoming){
+        return accountTypeRep.save(incoming);
+    }
 }

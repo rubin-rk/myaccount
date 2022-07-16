@@ -22,8 +22,18 @@ public class AccountController {
     public Account createTable(@RequestBody Account account){
         return accountService.createTable(account);
     }
+    //put method--update table(iruntha update pannum illa na create pannum)
+    @PutMapping(value = "/account/update")
+    public Account update(@RequestBody Account incoming){
+        return accountService.update(incoming);
+    }
+    //delete method --delete row
+    @DeleteMapping(value = "/account/delete/{id}")
+        public String delete(@PathVariable ("id") int acNo){
+            return accountService.delete(acNo);
+
+    }
     @GetMapping(value = "/hi")
-    public String hello(){
-        return "rubinkumar";
+    public String hello(){ return "rubinkumar";
     }
 }

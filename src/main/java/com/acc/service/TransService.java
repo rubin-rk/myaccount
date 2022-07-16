@@ -1,5 +1,6 @@
 package com.acc.service;
 
+import com.acc.entity.Account;
 import com.acc.entity.Transaction;
 import com.acc.respository.TransRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,5 +20,9 @@ public class TransService {
     //create new row for table
     public Transaction createNewTable(Transaction transaction){
         return transRepository.save(transaction);
+    }
+    //update table
+    public Transaction update(Transaction incoming){
+        return transRepository.save(incoming);
     }
 }

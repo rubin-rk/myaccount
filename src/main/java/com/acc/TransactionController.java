@@ -22,4 +22,10 @@ public class TransactionController {
     public Transaction createNewTable(@RequestBody Transaction transaction){
         return transService.createNewTable(transaction);
     }
+    //put method- create table
+    @PutMapping(value = "/transcation/update")
+    public Transaction update(@RequestBody Transaction incoming){
+        return transService.update(incoming);
+    }
+    //
 }

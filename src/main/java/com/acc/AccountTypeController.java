@@ -21,4 +21,9 @@ public class AccountTypeController {
     public AccountType createTable(@RequestBody AccountType accountType){
         return accountTypeService.createNewTable(accountType);
     }
+    //put method --update
+    @PutMapping(value = "/accounttype/update")
+    public AccountType update(@RequestBody AccountType incoming){
+        return accountTypeService.update(incoming);
+    }
 }

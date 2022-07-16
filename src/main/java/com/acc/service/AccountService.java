@@ -19,4 +19,13 @@ public class AccountService {
     public Account createTable(Account account){
         return accountRepository.save(account);
     }
+    //update
+    public Account update(Account incoming){
+        return  accountRepository.save(incoming);
+    }
+    //delete
+    public String delete(int acno){
+         accountRepository.deleteById(acno);
+         return "delete successfully";
+    }
 }
