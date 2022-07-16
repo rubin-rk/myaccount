@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
+
 @RestController
 
 public class TransactionController {
@@ -27,5 +29,13 @@ public class TransactionController {
     public Transaction update(@RequestBody Transaction incoming){
         return transService.update(incoming);
     }
-    //
+    //detete
+    @DeleteMapping(value = "/transcation/delete/{id}")
+    public String delete(@PathVariable ("id")int transid){
+        return transService.delete(transid);
+    }
+    @GetMapping(value = "/transaction/findid/{id}")
+    public Optional<Transaction>findId(@PathVariable("id")int findid){
+        return transService.findId(findid);
+    }
 }

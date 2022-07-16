@@ -26,4 +26,8 @@ public class AccountTypeController {
     public AccountType update(@RequestBody AccountType incoming){
         return accountTypeService.update(incoming);
     }
+    @DeleteMapping(value = "/accounttype/delete/{id}")
+    public String delete(@PathVariable("id")int actype_id){
+        return accountTypeService.delete(actype_id);
+    }
 }

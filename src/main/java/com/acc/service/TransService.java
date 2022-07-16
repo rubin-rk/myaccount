@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 
@@ -25,4 +26,14 @@ public class TransService {
     public Transaction update(Transaction incoming){
         return transRepository.save(incoming);
     }
+
+    //delete row
+    public String delete(int transid){
+                transRepository.deleteById(transid);
+             return "delete success";
+    }
+    public Optional<Transaction>findId(int findid){
+        return transRepository.findById(findid);
+    }
+
 }

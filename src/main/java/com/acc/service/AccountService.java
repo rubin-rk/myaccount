@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class AccountService {
     @Autowired
@@ -28,4 +30,9 @@ public class AccountService {
          accountRepository.deleteById(acno);
          return "delete successfully";
     }
+    //find-id
+    public Optional<Account> findId(int findid){
+        return accountRepository.findById(findid);
+    }
+
 }

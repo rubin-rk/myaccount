@@ -24,4 +24,9 @@ public class AccountTypeService {
     public AccountType update(AccountType incoming){
         return accountTypeRep.save(incoming);
     }
+    //delete row
+    public String delete(int actype_id){
+        accountTypeRep.deleteById(actype_id);
+                return "delete success";
+    }
 }
