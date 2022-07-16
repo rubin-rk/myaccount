@@ -3,6 +3,7 @@ package com.acc;
 import com.acc.entity.Account;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import com.acc.service.AccountService;
 
@@ -16,13 +17,15 @@ public class AccountController {
     private AccountService accountService;
     //get method ---find all table
     @RequestMapping (value="/account",method = RequestMethod.GET)
-    public List<Account>getAccount(){
-        return accountService.getAccount();
+    public String getAccount(Model model){
+        model.addAttribute( "allAccount",accountService.getAccount());
+        return "accountList";
     }
 
     //post method --save new row
     @PostMapping(value = "/account/create")
     public Account createTable(@RequestBody Account account){
+
         return accountService.createTable(account);
     }
     //put method--update table(iruntha update pannum illa na create pannum)
