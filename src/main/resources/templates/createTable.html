@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<h3>add book</h3>
+<form action="#" th:action="@{/account/create}" th:object="${account}"
+      method="post">
+    <div>
+        <label >id</label>
+        <input type="text" th:field="*{id}" placeholder=" id" />
+        <label >account_name</label>
+        <input type="text" th:field="*{account_name}" placeholder=" account_name" />
+        <label >account_type</label>
+        <input type="text" th:field="*{account_type}" placeholder="account_type" />
+        <label >balance</label>
+        <input type="text" th:field="*{balance}" placeholder=" balance" />
+        <label >overall_history</label>
+        <input type="text" th:field="*{overall_history}" placeholder="overall_history" />
+        <label >pending</label>
+        <input type="text" th:field="*{pending}" placeholder="pending" />
+        <input type="submit" class="btn btn-primary" value=" Submit ">
+    </div>
+
+</form>
+
+</body>
+</html>

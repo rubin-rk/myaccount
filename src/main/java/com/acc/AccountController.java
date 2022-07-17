@@ -15,18 +15,27 @@ import java.util.Optional;
 public class AccountController {
     @Autowired
     private AccountService accountService;
+    @GetMapping(value = "/myaccount")
+    public String html(){
+        return "htmlFile";
+    }
     //get method ---find all table
     @RequestMapping (value="/account",method = RequestMethod.GET)
     public String getAccount(Model model){
         model.addAttribute( "allAccount",accountService.getAccount());
         return "accountList";
     }
+    @GetMapping("/add")
+    public String lunchAddBookPage(Model model) {
+        model.addAttribute("account", new Account());
+        return "createTable";
+    }
 
     //post method --save new row
     @PostMapping(value = "/account/create")
-    public Account createTable(@RequestBody Account account){
-
-        return accountService.createTable(account);
+    public String createTable(@RequestBody Account account){
+        accountService.createTable(account);
+        return "redirect:/";
     }
     //put method--update table(iruntha update pannum illa na create pannum)
     @PutMapping(value = "/account/update")

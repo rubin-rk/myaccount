@@ -2,10 +2,24 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>total list</title>
 </head>
 <body>
-<table style="boder-color:blue"bgcolor="yellow">
+<div style="background-color:blue">
+    <form method="get" action="/add">
+        <button type="submit">create</button>
+    </form>
+<form method="get" action="/account/update">
+    <button type="submit">update</button>
+</form>
+<form action="/account/delete/{id}" method="get">
+    <button type="button">delete</button>
+</form>
+<form method="get" action="/account/findid/{id}">
+    <button type="button">findid</button>
+</form></div>
+<table style="border:1px" solid bgcolor="yellow">
+    <thead>
     <th>
         <td>id</td>
     <td>account_name</td>
@@ -14,9 +28,18 @@
     <td>overall_history</td>
     <td>pending</td>
     </th>
-    <tr >
+    </thead>
+    <tbody>
+    <tr th:each="allAcc:${allAccount}">
+        <td th:text="${allAcc.id}"></td>
+        <td th:text="${allAcc.account_name}"></td>
+        <td th:text="${allAcc.account_type}"></td>
+        <td th:text="${allAcc.balance}"></td>
+        <td th:text="${allAcc.overall_history}"></td>
+        <td th:text="${allAcc.pending}"></td>
 
     </tr>
+    </tbody>
 </table>
 </body>
 </html>
