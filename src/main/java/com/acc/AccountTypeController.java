@@ -17,7 +17,7 @@ public class AccountTypeController {
         return accountTypeService.findAll();
     }
     //post method for create table
-    @PostMapping(value = "/account/createTable")
+    @PostMapping(value = "/accounttype/createTable")
     public AccountType createTable(@RequestBody AccountType accountType){
         return accountTypeService.createNewTable(accountType);
     }

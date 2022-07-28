@@ -1,13 +1,14 @@
 package com.acc.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import net.bytebuddy.dynamic.loading.InjectionClassLoader;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "account")
 public class Account {
    @Id
+   @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
     private  String account_name;
     private int account_type;

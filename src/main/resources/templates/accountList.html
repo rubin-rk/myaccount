@@ -5,20 +5,20 @@
     <title>total list</title>
 </head>
 <body>
-<div style="background-color:blue">
-    <form method="get" action="/add">
-        <button type="submit">create</button>
-    </form>
-<form method="get" action="/account/update">
-    <button type="submit">update</button>
-</form>
-<form action="/account/delete/{id}" method="get">
-    <button type="button">delete</button>
-</form>
-<form method="get" action="/account/findid/{id}">
-    <button type="button">findid</button>
-</form></div>
-<table style="border:1px" solid bgcolor="yellow">
+<div class="container my-2">
+    <div class="card">
+        <div class="card-body">
+            <div th:switch="${allAccount}" class="container my-5">
+
+<p class="my-5">
+<a href="/add">
+    <i class="fas fa-user-plus ml-2"> Add a list </i>
+</a>
+</p>
+                <div class="col-md-10">
+                    <h2 th:case="null">No record found !!</h2>
+                    <div th:case="*">
+<table class="table table-striped table-responsive-md">
     <thead>
     <th>
         <td>id</td>
@@ -37,9 +37,28 @@
         <td th:text="${allAcc.balance}"></td>
         <td th:text="${allAcc.overall_history}"></td>
         <td th:text="${allAcc.pending}"></td>
+        <td>
+            <a th:href="@{/edit/{id}(id=${account.id})}"
+               class="btn btn-primary">
+                <i class="fas fa-user-edit ml-2"></i>
+            </a>
+        </td>
+        <td>
+            <a th:href="@{/account/delete/{id}}(id=${account.id})}"
+               class="btn btn-primary">
+                <i class="fas fa-user-times ml-2"></i>
+            </a>
+        </td>
 
     </tr>
     </tbody>
 </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

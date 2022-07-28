@@ -1,31 +1,64 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Add Book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 
 <body>
-<h3>add book</h3>
-<form action="#" th:action="@{/account/create}" th:object="${account}"
-      method="post">
-    <div>
-        <label >id</label>
-        <input type="text" th:field="*{id}" placeholder=" id" />
-        <label >account_name</label>
-        <input type="text" th:field="*{account_name}" placeholder=" account_name" />
-        <label >account_type</label>
-        <input type="text" th:field="*{account_type}" placeholder="account_type" />
-        <label >balance</label>
-        <input type="text" th:field="*{balance}" placeholder=" balance" />
-        <label >overall_history</label>
-        <input type="text" th:field="*{overall_history}" placeholder="overall_history" />
-        <label >pending</label>
-        <input type="text" th:field="*{pending}" placeholder="pending" />
-        <input type="submit" class="btn btn-primary" value=" Submit ">
-    </div>
+<div class="container my-5">
+    <h3> Add account list</h3>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-10">
+                <form action="#" th:action="@{/create}" th:object="${acc}"
+                      method="post">
+                    <div class="row">
 
-</form>
+                        <div class="form-group col-md-8">
+                            <label for="name" class="col-form-label">Account_name</label>
+                            <input type="text" th:field="*{account_name}" class="form-control"
+                                   id="accountname" placeholder="Account name" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="email" class="col-form-label">account_type</label>
+                            <input type="text" th:field="*{account_type}" class="form-control"
+                                   id="noofpages" placeholder="account type int" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="email" class="col-form-label">balance</label>
+                            <input type="text" th:field="*{balance}" class="form-control"
+                                   id="publication" placeholder="balance int" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="email" class="col-form-label">overall_history</label>
+                            <input type="text" th:field="*{overall_history}" class="form-control"
+                                   id="publication" placeholder="overall_history int" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="email" class="col-form-label">Pending</label>
+                            <input type="text" th:field="*{pending}" class="form-control"
+                                   id="publication" placeholder="Pending int" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="submit" class="btn btn-primary" value=" Submit ">
+                        </div>
+
+                        <input type="hidden" id="id" th:field="*{id}">
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

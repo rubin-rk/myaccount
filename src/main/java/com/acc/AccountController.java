@@ -15,7 +15,7 @@ import java.util.Optional;
 public class AccountController {
     @Autowired
     private AccountService accountService;
-    @GetMapping(value = "/myaccount")
+    @GetMapping(value = "/")
     public String html(){
         return "htmlFile";
     }
@@ -27,15 +27,15 @@ public class AccountController {
     }
     @GetMapping("/add")
     public String lunchAddBookPage(Model model) {
-        model.addAttribute("account", new Account());
+        model.addAttribute("acc", new Account());
         return "createTable";
     }
 
     //post method --save new row
-    @PostMapping(value = "/account/create")
+    @PostMapping( "/create")
     public String createTable(@RequestBody Account account){
         accountService.createTable(account);
-        return "redirect:/";
+        return "redirect:/account";
     }
     //put method--update table(iruntha update pannum illa na create pannum)
     @PutMapping(value = "/account/update")
